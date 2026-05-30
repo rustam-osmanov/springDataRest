@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "employees", schema = "test")
-public class EmployeeBD {
+public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "employees_id_gen")
     @SequenceGenerator(name = "employees_id_gen", sequenceName = "test.employees_id_seq", allocationSize = 1)
@@ -18,10 +18,10 @@ public class EmployeeBD {
     private String department;
     @Column(name = "salary")
     private int salary;
-    public EmployeeBD() {
+    public Employee() {
     }
 
-    public EmployeeBD(String name, String surname, String department, int salary) {
+    public Employee(String name, String surname, String department, int salary) {
         this.name = name;
         this.surname = surname;
         this.department = department;
